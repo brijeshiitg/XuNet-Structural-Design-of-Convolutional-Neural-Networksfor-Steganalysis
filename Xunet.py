@@ -6,10 +6,10 @@ import torch.nn.functional as F
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 KV = torch.tensor([[-1,2,-2,2,-1],
-						[2,-6,8,-6,2],
-						[-2,8,-12,8,-2],
-						[2,-6,8,-6,2],
-						[-1,2,-2,2,-1]])/12.
+		   [2,-6,8,-6,2],
+		   [-2,8,-12,8,-2],
+		   [2,-6,8,-6,2],
+		   [-1,2,-2,2,-1]])/12.
 KV = KV.view(1,1,5,5).to(device=device, dtype=torch.float)
 KV = torch.autograd.Variable(KV, requires_grad=False)
 print(KV.shape)
